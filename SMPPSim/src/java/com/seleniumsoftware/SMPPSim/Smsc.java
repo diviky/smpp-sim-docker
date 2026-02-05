@@ -550,7 +550,7 @@ public class Smsc {
 		}
 		DeliveryReceipt receipt = new DeliveryReceipt(smppmsg,esm_class,messageID,state);
 		Date rightNow = new Date();
-		SimpleDateFormat df = new SimpleDateFormat("yyMMddHHmm");
+		SimpleDateFormat df = new SimpleDateFormat("yyMMddHHmmss");
 		String dateAsString = df.format(rightNow);
 		receipt.setMessage_id(messageID);
 		String s = "000" + sub;
