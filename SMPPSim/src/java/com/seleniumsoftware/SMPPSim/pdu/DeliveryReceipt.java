@@ -94,8 +94,8 @@ public class DeliveryReceipt extends DeliverSM {
 	}
 
 	public void setDeliveryReceiptMessage(byte state) {
-		// id:IIIIIIIIII sub:SSS dlvrd:DDD submit date:YYMMDDhhmm done
-		// date:YYMMDDhhmm stat:DDDDDDD err:E Text: . . . . . . . . .
+		// id:IIIIIIIIII sub:SSS dlvrd:DDD submit date:YYMMDDhhmmssSSS done
+		// date:YYMMDDhhmmssSSS stat:DDDDDDD err:E Text: . . . . . . . . .
 		Date d = new Date();
 		String id = "id:" + message_id;
 		String sb = " sub:" + sub;

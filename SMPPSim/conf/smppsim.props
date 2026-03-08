@@ -2,7 +2,7 @@
 # clients. SMPP_CONNECTION_HANDLERS determines the maximum number of client connections
 # that can be handled concurrently.
 SMPP_PORT=2775
-SMPP_CONNECTION_HANDLERS=10
+SMPP_CONNECTION_HANDLERS=10000
 
 # Specify the classes that imlement connection and protocol handling respectively here.
 # Such classes *must* be subclasses of com.seleniumsoftware.SMPPSim.ConnectionHandler and com.seleniumsoftware.SMPPSim.SMPPProtocolHandler respectively
@@ -23,7 +23,7 @@ LIFE_CYCLE_MANAGER=com.seleniumsoftware.SMPPSim.LifeCycleManager
 # LifeCycleManager parameters
 #
 # Check and possibly change the state of messages in the OutboundQueue every n milliseconds
-MESSAGE_STATE_CHECK_FREQUENCY=5000
+MESSAGE_STATE_CHECK_FREQUENCY=1000
 
 # Maximum time (in milliseconds) in the initial ENROUTE state
 MAX_TIME_ENROUTE=10000
@@ -33,7 +33,7 @@ DELAY_DELIVERY_RECEIPTS_BY=0
 
 # Percentage of messages that change state each time we check (excluding expiry or messages being completely discarded due to age)
 # Requires an integer between 0 and 100
-PERCENTAGE_THAT_TRANSITION=75
+PERCENTAGE_THAT_TRANSITION=100
 
 # State transition percentages. These parameters define the percentage of messages that
 # transition from ENROUTE to the specified final state. The list of percentages should
@@ -84,8 +84,8 @@ ESME_TO_ESME=false
 
 # QUEUES
 # Maximum size parameters are expressed as max number of objects the queue can hold
-OUTBOUND_QUEUE_MAX_SIZE=1000
-INBOUND_QUEUE_MAX_SIZE=1000
+OUTBOUND_QUEUE_MAX_SIZE=100000
+INBOUND_QUEUE_MAX_SIZE=100000
 
 # The delayed inbound queue holds DELIVER_SM (MO) messages which could not be delivered to the selected ESME
 # because it replied "queue full". Such messages get stored in the delayed inbound queue and delivery is attempted again
@@ -103,7 +103,7 @@ DELAYED_INBOUND_QUEUE_MAX_ATTEMPTS=100
 # Set the following property to true to have each PDU logged in human readable
 # format. Uses INFO level logging so the log level must be set accordingly for this
 # output to appear.
-DECODE_PDUS_IN_LOG=true
+DECODE_PDUS_IN_LOG=false
 
 # PDU CAPTURE
 # The following properties allow binary and/or decoded PDUs to be captured in files
